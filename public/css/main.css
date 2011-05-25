@@ -1,0 +1,59 @@
+label {
+  display: block;
+  font-weight: bold;
+}
+
+form {
+  text-align: left;
+}
+
+fieldset {
+  margin-top: 10px;
+}
+
+#page {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#success {
+  border: 2px solid blue;
+}
+
+#error {
+  border: 2px solid red;
+}
+
+.buttons {
+  float: right;
+}
+
+#time {
+  font-size: 0.8em;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+

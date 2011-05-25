@@ -2,43 +2,70 @@
 <html>
   <head>
     <title>Change your LDAP password</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.pwdstr-1.0.source.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <script type="text/javascript">
+      $(function() {
+          $("input[name='new_password']").pwdstr('#time > span');
+      });
+    </script>
+
   </head>
 
   <body>
-    <% if @error %>
-      <div id="error">
-        <%= @error %>
-      </div>
-    <% end %>
+    <div id="page" class="clearfix">
 
-    <% if @success %>
-      <div id="success">
-        <%= @success %>
-      </div>
-    <% end %>
+      <h1>Change your LDAP password</h1>
 
-    <form action="/" method="POST">
-      <p>
-        <label for="username">User name:</label>
-        <input type="text" name="username" />
-      </p>
-      <p>
-        <label for="password">Password:</label>
-        <input type="password" name="password" />
-      </p>
+      <% if @error %>
+        <div id="error">
+          <%= @error %>
+        </div>
+      <% end %>
 
-      <p>
-        <label for="new_password">New password:</label>
-        <input type="password" name="new_password" />
-      </p>
-      <p>
-        <label for="password_confirmation">Password confirmation:</label>
-        <input type="password" name="password_confirmation" />
-      </p>
+      <% if @success %>
+        <div id="success">
+          <%= @success %>
+        </div>
+      <% end %>
 
-      <p>
-        <input type="submit" value="Change password"/>
-      </p>
-    </form>
+      <form action="/" method="POST">
+
+        <fieldset>
+          <legend>Login:</legend>
+          <p>
+            <label for="username">User name:</label>
+            <input type="text" name="username" />
+          </p>
+          <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password" />
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Change password:</legend>
+          <p>
+            <label for="new_password">New password:</label>
+            <input type="password" name="new_password" />
+            <div id="time">
+              Your password can be forced in: <span>less than one second</span>
+            </div>
+          </p>
+          <p>
+            <label for="password_confirmation">Password confirmation:</label>
+            <input type="password" name="password_confirmation" />
+          </p>
+        </fieldset>
+
+        <p class="buttons">
+          <input type="submit" value="Change password"/>
+        </p>
+
+      </form>
+    </div>
   </body>
 </html>
