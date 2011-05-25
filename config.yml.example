@@ -1,0 +1,6 @@
+host: ldap.example.com
+port: 10389
+base: dc=example,dc=com
+username_pattern: uid=%s,ou=users,dc=example,dc=com
+admin: uid=admin,ou=system
+admin_password: supersikret
