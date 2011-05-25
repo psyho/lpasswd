@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change your LDAP password</title>
+  </head>
+
+  <body>
+    <% if @error %>
+      <div id="error">
+        <%= @error %>
+      </div>
+    <% end %>
+
+    <% if @success %>
+      <div id="success">
+        <%= @success %>
+      </div>
+    <% end %>
+
+    <form action="/" method="POST">
+      <p>
+        <label for="username">User name:</label>
+        <input type="text" name="username" />
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+      </p>
+
+      <p>
+        <label for="new_password">New password:</label>
+        <input type="password" name="new_password" />
+      </p>
+      <p>
+        <label for="password_confirmation">Password confirmation:</label>
+        <input type="password" name="password_confirmation" />
+      </p>
+
+      <p>
+        <input type="submit" value="Change password"/>
+      </p>
+    </form>
+  </body>
+</html>
